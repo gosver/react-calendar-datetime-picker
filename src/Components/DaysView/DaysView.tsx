@@ -246,6 +246,11 @@ const DaysView: FC<IDaysProps> = ({
         (index + daysForPreviousMonth.length) % 7 === 0
       ) {
         classes += ' is_weekends'
+      }else if (
+        local === 'ru' &&
+        (index + daysForPreviousMonth.length) % 7 === 0
+      ) {
+        classes += ' is_weekends'
       }
     }
     if (

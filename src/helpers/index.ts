@@ -133,6 +133,16 @@ export const handelInitialValues = (
     ) {
       today = new Date(maxDate.year, maxDate.month, maxDate.day)
     }
+    else if (
+      local === 'ru' &&
+      selectCompar[local](maxDate, {
+        year: today.getFullYear(),
+        month: today.getMonth(),
+        day: today.getDate()
+      }) === 2
+    ) {
+      today = new Date(maxDate.year, maxDate.month, maxDate.day)
+    }
   }
   if (minDate) {
     if (
@@ -147,6 +157,15 @@ export const handelInitialValues = (
       todayP = { jy: minDate.year, jm: minDate.month + 1, jd: minDate.day }
     } else if (
       local === 'en' &&
+      selectCompar[local](minDate, {
+        year: today.getFullYear(),
+        month: today.getMonth(),
+        day: today.getDate()
+      }) === 1
+    ) {
+      today = new Date(minDate.year, minDate.month, minDate.day)
+    }else if (
+      local === 'ru' &&
       selectCompar[local](minDate, {
         year: today.getFullYear(),
         month: today.getMonth(),
@@ -344,7 +363,7 @@ export const checkInputValues = (
     fa: compareDateFA
   }
 
-  if (!(correctedLocal === 'en' || correctedLocal === 'fa')) {
+  if (!(correctedLocal === 'en' || correctedLocal === 'fa' || correctedLocal === 'ru')) {
     throw Error('Local must be "en" or "fa".')
   }
   if (
