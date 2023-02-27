@@ -2,7 +2,7 @@ import React, { FC, Fragment } from 'react'
 import { useCalenderActions } from '../../store/CalenderProvider'
 import { useLangOption } from '../../hooks/useLangOption'
 import { useMinMaxState } from '../../store/MinMaxProvider'
-import { compareDateEN, compareDateFA } from '../../helpers'
+import {compareDateEN, compareDateFA, compareDateRU} from '../../helpers'
 interface ITodayBtn {
   local: string
   todayBtn: boolean
@@ -15,6 +15,7 @@ const TodayBtn: FC<ITodayBtn> = ({ local, todayBtn }) => {
   const isShowTodayBtn = () => {
     const selectCompar = {
       en: compareDateEN,
+      ru: compareDateRU,
       fa: compareDateFA
     }
     if (!todayBtn) return false

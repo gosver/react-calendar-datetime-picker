@@ -194,6 +194,108 @@ export const LOCAL_CONSTANT = {
     toLB: 'to',
     clockLB: 'clock',
     todayBtnTL: 'Today'
+  },
+  ru: {
+    WEEK_DAY: [
+      'Воскресенье',
+      'Понедельник',
+      'Вторник',
+      'Среда',
+      'Четверг',
+      'Пятница',
+      'Суббота'
+    ],
+
+    WEEK_DAY_SHORT: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+    MONTHS: [
+      'Январь',
+      'Февраль',
+      'Март',
+      'Апрель',
+      'Май',
+      'Июнь',
+      'Июль',
+      'Август',
+      'Сентябрь',
+      'Октябрь',
+      'Ноябрь',
+      'Декабрь'
+    ],
+    MONTHS_SHORT: [
+      'Янв',
+      'Фев',
+      'Мар',
+      'Апр',
+      'Май',
+      'Июн',
+      'Июл',
+      'Авг',
+      'Сен',
+      'Окт',
+      'Ноя',
+      'Дек'
+    ],
+    WEEK_DAYS: [
+      {
+        name: 'Воскресенье',
+        short: 'Вс',
+        isWeekend: true
+      },
+      {
+        name: 'Понедельник',
+        short: 'Пн'
+      },
+      {
+        name: 'Вторник',
+        short: 'Вт'
+      },
+      {
+        name: 'Сред',
+        short: 'Ср'
+      },
+      {
+        name: 'Четверг',
+        short: 'Чт'
+      },
+      {
+        name: 'Пятница',
+        short: 'Пт'
+      },
+      {
+        name: 'Суббота',
+        short: 'Сб',
+        isWeekend: true
+      }
+    ],
+    YEARS_RANGE_START: today.getFullYear() - 100,
+    YEARS_RANGE_END: today.getFullYear() + 100,
+    getDay: (date: IDay) => {
+      return new Date(date.year, date.month, date.day).getDay()
+    },
+    // today: () => {
+    //   return new Date()
+    // },
+    todayObject: () => {
+      const date = new Date()
+      return {
+        year: date.getFullYear(),
+        month: date.getMonth(),
+        day: date.getDate()
+      }
+    },
+    getDayOfMonth: (date: IDay) => {
+      return new Date(date.year, date.month, date.day).getDate()
+    },
+
+    inputPlaceholder: 'select',
+    clockFromLB: 'from',
+    clockToLB: 'to',
+    nextMonthBtnTL: 'next month',
+    previousMonthBtnTL: 'previous month',
+    fromLB: 'from',
+    toLB: 'to',
+    clockLB: 'clock',
+    todayBtnTL: 'Today'
   }
 }
 

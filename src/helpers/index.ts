@@ -74,6 +74,16 @@ export const compareDateEN = (date1: IDay, date2: IDay) => {
   }
   return 0
 }
+export const compareDateRU = (date1: IDay, date2: IDay) => {
+  const fixDate1 = new Date(date1.year, date1.month, date1.day)
+  const fixDate2 = new Date(date2.year, date2.month, date2.day)
+  if (fixDate1 > fixDate2) {
+    return 1
+  } else if (fixDate1 < fixDate2) {
+    return 2
+  }
+  return 0
+}
 export const compareDateFA = (date1: IDay, date2: IDay) => {
   const fixDate1 = jalaali.j2d(date1.year, date1.month + 1, date1.day)
   const fixDate2 = jalaali.j2d(date2.year, date2.month + 1, date2.day)
@@ -98,6 +108,7 @@ export const handelInitialValues = (
   let todayP = jalaali.toJalaali(today)
   const selectCompar = {
     en: compareDateEN,
+    ru: compareDateRU,
     fa: compareDateFA
   }
 
@@ -307,6 +318,7 @@ export const isDayBetween = (
 ) => {
   const selectCompar = {
     en: compareDateEN,
+    ru: compareDateRU,
     fa: compareDateFA
   }
   if (
@@ -328,6 +340,7 @@ export const checkInputValues = (
 ) => {
   const selectCompar = {
     en: compareDateEN,
+    ru: compareDateRU,
     fa: compareDateFA
   }
 
